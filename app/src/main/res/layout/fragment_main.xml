@@ -25,7 +25,7 @@
             app:endIconCheckable="true"
 
 
-            app:endIconDrawable="@android:drawable/ic_menu_preferences"
+            app:endIconDrawable="@android:drawable/ic_menu_zoom"
             app:endIconMode="custom"
             app:helperText="helperText"
             app:layout_constraintBottom_toTopOf="@+id/image_view"
@@ -36,7 +36,7 @@
                 android:id="@+id/input_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword" />
+                android:inputType="textAutoComplete" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -45,13 +45,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="388dp"
+
             android:contentDescription="Фото дня"
             android:scaleType="fitCenter"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:drawable/sym_def_app_icon" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -63,6 +64,7 @@
         android:id="@+id/chip_container"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="#F4A7A7"
         android:layout_gravity="">
 
     </LinearLayout>

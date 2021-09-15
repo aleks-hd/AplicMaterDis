@@ -13,4 +13,17 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="ThemeNew" parent="Theme.AplicMaterDis">
+
+        <item name="colorPrimary">@android:color/holo_blue_bright</item>
+        <item name="colorPrimaryVariant">#AA00FF</item>
+        <item name="colorOnPrimary">#00C853</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#C5895C</item>
+        <item name="colorSecondaryVariant">#F16700</item>
+        <item name="colorOnSecondary">#712020</item>
+
+    </style>
+
 </resources>

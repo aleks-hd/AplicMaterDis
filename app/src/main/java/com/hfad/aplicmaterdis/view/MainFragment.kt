@@ -14,6 +14,7 @@ import coil.api.load
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.hfad.aplicmaterdis.R
 import com.hfad.aplicmaterdis.databinding.FragmentMainBinding
+
 import com.hfad.aplicmaterdis.repository.PictureData
 import com.hfad.aplicmaterdis.viewModel.PictureViewModel
 
@@ -41,13 +42,13 @@ class MainFragment : Fragment() {
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.main,menu)
+        inflater.inflate(R.menu.main, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
-        when(item.itemId){
-            R.id.app_bar_fav -> Toast.makeText(context, "Избранное", Toast.LENGTH_SHORT).show()
+        when (item.itemId) {
+            R.id.app_bar_fav -> openSettingFragment()
             R.id.app_bar_search -> openFragment()
         }
 
@@ -55,10 +56,18 @@ class MainFragment : Fragment() {
 
     }
 
+    private fun openSettingFragment() {
+        activity?.supportFragmentManager?.beginTransaction()
+            ?.addToBackStack(null)
+            ?.replace(R.id.chip_container, SettingsFragment.newInstance())
+            ?.commit()
+    }
+
     private fun openFragment() {
-       activity?.supportFragmentManager?.beginTransaction()
-           ?.add(R.id.chip_container, ChipsFragment.newInstance())
-           ?.commit()
+        activity?.supportFragmentManager?.beginTransaction()
+            ?.addToBackStack(null)
+            ?.replace(R.id.chip_container, ChipsFragment.newInstance())
+            ?.commit()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -67,30 +76,31 @@ class MainFragment : Fragment() {
         setBottomAppBar(view)
         binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
-                data = Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
+                data =
+                    Uri.parse("https://en.wikipedia.org/wiki/${binding.inputEditText.text.toString()}")
             })
         }
         view?.let { setBottomSheetBehavior(it.findViewById(R.id.bottom_sheet_behavor)) }
     }
 
     private fun setBottomAppBar(view: View?) {
-    val context = activity as MainActivity
+        val context = activity as MainActivity
         context.setSupportActionBar(view?.findViewById(R.id.bottom_app_bar))
         setHasOptionsMenu(true)
     }
 
-    private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout){
+    private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {
         bottomSheetBehavir = BottomSheetBehavior.from(bottomSheet)
         bottomSheetBehavir.state = BottomSheetBehavior.STATE_COLLAPSED
     }
 
     private fun render(data: PictureData?) {
-        when(data){
+        when (data) {
             is PictureData.Success -> {
                 val serverResponseData = data.serverResponse
                 val url = serverResponseData.url
                 showPictures(url)
-                Toast.makeText(context,url, Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, url, Toast.LENGTH_SHORT).show()
             }
         }
     }
