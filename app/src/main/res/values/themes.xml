@@ -26,4 +26,16 @@
 
     </style>
 
+    <style name="ThemeNewLight" parent="Theme.AplicMaterDis">
+
+        <item name="colorPrimary">#C3DC7B</item>
+        <item name="colorPrimaryVariant">#2B6705</item>
+        <item name="colorOnPrimary">#C9ECB3</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#9DDA77</item>
+        <item name="colorSecondaryVariant">#64CA8E</item>
+        <item name="colorOnSecondary">#64AA38</item>
+
+    </style>
+
 </resources>

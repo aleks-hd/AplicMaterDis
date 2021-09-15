@@ -31,29 +31,23 @@ class SettingsFragment : Fragment() {
     }
 
     private fun initListenerChips() {
-        binding.buttonGroup.addOnButtonCheckedListener(object :
-            MaterialButtonToggleGroup.OnButtonCheckedListener {
-            override fun onButtonChecked(
-                group: MaterialButtonToggleGroup?,
-                checkedId: Int,
-                isChecked: Boolean
-            ) {
-         val theme = when(checkedId){
-              binding.darkStyle.id -> R.style.ThemeNew
-              binding.lightStyle.id -> AppCompatDelegate.MODE_NIGHT_NO
-              binding.customStyle.id -> AppCompatDelegate.MODE_NIGHT_UNSPECIFIED
-             else -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-         }
-         AppCompatDelegate.setDefaultNightMode(theme)
+        binding.buttonGroup.addOnButtonCheckedListener { group, checkedId, isChecked ->
+            when (checkedId) {
+                binding.darkStyle.id -> setIntentTheme("dark")
+                binding.lightStyle.id -> setIntentTheme("light")
+                binding.customStyle.id -> setIntentTheme("custom")
+                else -> ""
             }
-        })
-
-
-        /*binding.chip4.setOnClickListener { Toast.makeText(context,binding.chip4.isChecked.toString(),Toast.LENGTH_SHORT).show()
-                activity?.setTheme(R.style.ThemeNew)*/
-
+        }
     }
 
+    fun setIntentTheme(nameTheme: String) {
+        activity?.let {
+            val intent = Intent(it, MainActivity::class.java)
+            intent.putExtra("CheckTheme", nameTheme)
+            startActivity(intent)
+        }
+    }
 
     companion object {
 
