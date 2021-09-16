@@ -12,7 +12,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import coil.api.load
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.tabs.TabLayout
 import com.hfad.aplicmaterdis.R
+import com.hfad.aplicmaterdis.adapter.ViewPagerAdapter
 import com.hfad.aplicmaterdis.databinding.FragmentMainBinding
 
 import com.hfad.aplicmaterdis.repository.PictureData
@@ -74,6 +76,10 @@ class MainFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel.getData().observe(viewLifecycleOwner, Observer { render(it) })
         setBottomAppBar(view)
+        binding.viewPager.adapter = ViewPagerAdapter(childFragmentManager)
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
+        settingTabLayout(binding.tabLayout)
+
         binding.inputLayout.setEndIconOnClickListener {
             startActivity(Intent(Intent.ACTION_VIEW).apply {
                 data =
@@ -81,6 +87,12 @@ class MainFragment : Fragment() {
             })
         }
         view?.let { setBottomSheetBehavior(it.findViewById(R.id.bottom_sheet_behavor)) }
+    }
+
+    private fun settingTabLayout(tab: TabLayout) {
+        tab.getTabAt(0)?.setIcon(R.drawable.earth)
+        tab.getTabAt(1)?.setIcon(R.drawable.mars)
+        tab.getTabAt(2)?.setIcon(R.drawable.basket)
     }
 
     private fun setBottomAppBar(view: View?) {
