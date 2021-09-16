@@ -99,15 +99,17 @@ class MainFragment : Fragment() {
             is PictureData.Success -> {
                 val serverResponseData = data.serverResponse
                 val url = serverResponseData.url
-                showPictures(url)
-                Toast.makeText(context, url, Toast.LENGTH_SHORT).show()
+                binding.imageView.load(url)
+            }
+            is PictureData.Loading -> {
+                binding.imageView.load(R.drawable.progress_animation)
+            }
+            is PictureData.Error -> {
+                binding.imageView.load(R.drawable.error_load)
             }
         }
     }
 
-    private fun showPictures(url: String?) {
-        binding.imageView.load(url)
-    }
 
     override fun onDestroy() {
         super.onDestroy()

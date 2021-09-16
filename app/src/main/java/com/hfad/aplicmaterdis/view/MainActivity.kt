@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
        val keyCheckTheme = intent.extras?.getString("CheckTheme")
 
         when(keyCheckTheme){
-              "dark" -> setTheme(R.style.ThemeNew)
+              "dark" -> setTheme(R.style.Theme_AplicMaterDisNight)
             "light" ->  setTheme(R.style.ThemeNewLight)
             else -> Toast.makeText(this,"Тема не найдена", Toast.LENGTH_SHORT).show()
         }

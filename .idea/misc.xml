@@ -3,10 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/drawable/progress_animation.xml" value="0.20555555555555555" />
         <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/layout/activity_main.xml" value="0.16893115942028986" />
         <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/layout/botton_sheet_behavor.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/layout/fragment_chips.xml" value="0.22" />
-        <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/layout/fragment_main.xml" value="0.25" />
+        <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/layout/fragment_main.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/layout/fragment_settings.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/menu/main.xml" value="0.2824074074074074" />
       </map>
