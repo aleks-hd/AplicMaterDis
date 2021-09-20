@@ -12,19 +12,38 @@
         android:id="@+id/slider_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:stepSize="10.0"
         android:valueFrom="0.0"
-        android:valueTo="100.0"
-        android:stepSize="10.0"/>
+        android:valueTo="100.0" />
+
     <TextView
         android:id="@+id/textTest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="sklfjdnbsljnf"/>
+        android:hint="sklfjdnbsljnf" />
 
-   <!-- <com.google.android.youtube.player.YouTubePlayerView
-        android:id="@+id/youtube_player"
-        android:layout_width="250dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"/> -->
+    <ImageView
+        android:id="@+id/image_navigation_view"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:menu="@menu/main_menu" />
+    <!-- <com.google.android.youtube.player.YouTubePlayerView
+         android:id="@+id/youtube_player"
+         android:layout_width="250dp"
+         android:layout_height="200dp"
+         android:layout_gravity="center"/> -->
 
 </LinearLayout>

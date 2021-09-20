@@ -1,9 +1,11 @@
 package com.hfad.aplicmaterdis.view.viewPagers
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -13,13 +15,14 @@ import com.google.android.youtube.player.YouTubeInitializationResult
 import com.google.android.youtube.player.YouTubePlayer
 import com.google.android.youtube.player.YouTubePlayerFragment
 import com.google.android.youtube.player.YouTubePlayerView
+import com.hfad.aplicmaterdis.R
 import com.hfad.aplicmaterdis.databinding.FragmentWeatherBinding
 import com.hfad.aplicmaterdis.model.TestSlider
 import com.hfad.aplicmaterdis.viewModel.ViewModetTest
 
 
 class WeatherFragment : Fragment() {
-   // lateinit var youTubeVideo: YouTubePlayerView
+    // lateinit var youTubeVideo: YouTubePlayerView
     private var slederData: TestSlider = TestSlider()
     private lateinit var viewModel: ViewModetTest
     private var _binding: FragmentWeatherBinding? = null
@@ -37,12 +40,36 @@ class WeatherFragment : Fragment() {
     }
 
 
-
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-
+        binding.bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.bottom_view_earth -> {
+                    var df = view?.findViewById<ImageView>(R.id.image_navigation_view)
+                    df?.setImageResource(android.R.drawable.sym_contact_card)
+                    Log.i("TEST", "view_earth")
+                    true
+                }
+                R.id.bottom_view_mars -> {
+                    var df = view?.findViewById<ImageView>(R.id.image_navigation_view)
+                    df?.setImageResource(android.R.drawable.sym_def_app_icon)
+                    Log.i("TEST", "view_mars")
+                    true
+                }
+                R.id.bottom_view_weather -> {
+                    var df = view?.findViewById<ImageView>(R.id.image_navigation_view)
+                    df?.setImageResource(android.R.drawable.sym_action_email)
+                    Log.i("TEST", "view_weather")
+                    true
+                }
+                else -> false
+            }
+        }
+        binding.bottomNavigationView.getOrCreateBadge(R.id.bottom_view_earth)
+        binding.bottomNavigationView.getOrCreateBadge(R.id.bottom_view_mars)
+       val badge =  binding.bottomNavigationView.getBadge(R.id.bottom_view_mars)
+       badge?.number = 56
         /*youTubeVideo = binding.youtubePlayer
         val listener  = object : YouTubePlayer.OnInitializedListener{
             override fun onInitializationSuccess(
@@ -78,12 +105,22 @@ class WeatherFragment : Fragment() {
 
     }
 
-    private fun redrer(it: TestSlider?) {
-        var qwe = it?.znach.toString()
-        binding.textTest.text = it?.znach.toString()
+    private fun redrer(it: TestSlider) {
+        var qwe = it.znach.toString()
+        binding.textTest.text = it.znach.toString()
+        var inte = it.znach?.toInt()
+        if (inte < 30) binding.bottomNavigationView.selectedItemId = R.id.bottom_view_earth
+        if (inte in 30..59) {
+            binding.bottomNavigationView.selectedItemId = R.id.bottom_view_mars
+        }
+        if (inte > 60){
+            binding.bottomNavigationView.selectedItemId = R.id.bottom_view_weather
+        }
+
     }
 
-   companion object {
+
+    companion object {
 
         @JvmStatic
         fun newInstance() = WeatherFragment()

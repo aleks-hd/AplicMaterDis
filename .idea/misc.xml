@@ -7,6 +7,7 @@
         <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/drawable/swape_active.xml" value="0.20555555555555555" />
         <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/drawable/swipe_passive.xml" value="0.20555555555555555" />
         <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/layout/activity_main.xml" value="0.16893115942028986" />
+        <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/layout/bottom_navigation_bar.xml" value="0.18" />
         <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/layout/botton_sheet_behavor.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/layout/fragment_chips.xml" value="0.22" />
         <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/layout/fragment_earth.xml" value="0.1" />
@@ -15,7 +16,9 @@
         <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/layout/fragment_settings.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/layout/fragment_weather.xml" value="0.1" />
         <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/layout/swipe_indicator_active.xml" value="0.1" />
+        <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/layout/view_pager.xml" value="0.20364583333333333" />
         <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/menu/main.xml" value="0.2824074074074074" />
+        <entry key="..\:/AndroidProjects/AplicMaterDis/app/src/main/res/menu/main_menu.xml" value="0.20052083333333334" />
       </map>
     </option>
   </component>
