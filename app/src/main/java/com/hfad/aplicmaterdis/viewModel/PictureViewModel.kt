@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.hfad.aplicmaterdis.BuildConfig
 import com.hfad.aplicmaterdis.repository.PODServerResponse
+
 import com.hfad.aplicmaterdis.repository.PictureData
 import com.hfad.aplicmaterdis.repository.RequesrOnServerAPIIml
 import retrofit2.Call
@@ -17,7 +18,8 @@ class PictureViewModel(
 ) : ViewModel(){
 
     fun getData():LiveData<PictureData>{
-        sendServerRequest()
+       sendServerRequest()
+
         return liveDataToObserver
     }
 
@@ -55,5 +57,6 @@ class PictureViewModel(
             })
         }
     }
+
 
 }

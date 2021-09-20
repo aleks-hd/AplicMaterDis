@@ -8,4 +8,5 @@ interface RequesrOnServerAPI {
     @GET("planetary/apod")
     fun getPictures(@Query("api_key") apiKey: String):
             Call<PODServerResponse>
+
 }

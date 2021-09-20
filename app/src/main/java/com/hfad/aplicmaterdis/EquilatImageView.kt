@@ -3,7 +3,7 @@ package com.hfad.aplicmaterdis
 import android.content.Context
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageView
-import java.util.jar.Attributes
+
 
 class EquilatImageView @JvmOverloads constructor(
     context: Context, attrs: AttributeSet?=null,

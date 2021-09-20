@@ -23,6 +23,15 @@ class RequesrOnServerAPIIml {
         return pRetrofit.create(RequesrOnServerAPI::class.java)
     }
 
+    fun getRetrofitEarth(): RequesrOnServerAPI {
+        val pRetrofit = Retrofit.Builder()
+            .baseUrl(baseURL)
+            .client(createOkHttpClient(PODInterseptor()))
+            .build()
+        return pRetrofit.create(RequesrOnServerAPI::class.java)
+    }
+
+
     inner class PODInterseptor : Interceptor {
         @Throws(IOException::class)
         override fun intercept(chain: Interceptor.Chain): Response {

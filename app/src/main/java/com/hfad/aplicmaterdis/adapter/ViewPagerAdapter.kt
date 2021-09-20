@@ -7,16 +7,16 @@ import com.hfad.aplicmaterdis.view.viewPagers.EarthFragment
 import com.hfad.aplicmaterdis.view.viewPagers.MarsFragment
 import com.hfad.aplicmaterdis.view.viewPagers.WeatherFragment
 
-class ViewPagerAdapter(private val fragment: FragmentManager): FragmentStatePagerAdapter(fragment) {
+class ViewPagerAdapter(private val fragment: FragmentManager): FragmentStatePagerAdapter(fragment, BEHAVIOR_SET_USER_VISIBLE_HINT) {
 
-    private val fragments = arrayOf(EarthFragment(), MarsFragment(), WeatherFragment())
+    private val fragments = arrayOf( MarsFragment(), EarthFragment(),WeatherFragment())
 
     override fun getPageTitle(position: Int): CharSequence? {
         return when(position){
-            0 -> "Earth"
-            1 -> "Mars"
+            0 -> "Mars"
+            1 -> "Earth"
             2 -> "Weather"
-         else -> "Earth"
+         else -> "Mars"
         }
     }
 
@@ -25,7 +25,7 @@ class ViewPagerAdapter(private val fragment: FragmentManager): FragmentStatePage
            0 -> fragments[0]
            1 -> fragments[1]
            2 -> fragments[2]
-           else -> fragments[0]
+           else -> fragments[1]
        }
     }
 

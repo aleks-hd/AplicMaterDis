@@ -1,5 +1,6 @@
 package com.hfad.aplicmaterdis.repository
 
+import android.graphics.Bitmap
 import com.google.gson.annotations.SerializedName
 
 data class PODServerResponse(
@@ -11,7 +12,6 @@ data class PODServerResponse(
     @field:SerializedName("service_version") val service_version: String?,
     @field:SerializedName("title") val title: String?,
     @field:SerializedName("url") val url: String?
-
-
-
 )
+
+
