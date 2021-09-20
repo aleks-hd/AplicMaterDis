@@ -68,8 +68,7 @@ class WeatherFragment : Fragment() {
         }
         binding.bottomNavigationView.getOrCreateBadge(R.id.bottom_view_earth)
         binding.bottomNavigationView.getOrCreateBadge(R.id.bottom_view_mars)
-       val badge =  binding.bottomNavigationView.getBadge(R.id.bottom_view_mars)
-       badge?.number = 56
+
         /*youTubeVideo = binding.youtubePlayer
         val listener  = object : YouTubePlayer.OnInitializedListener{
             override fun onInitializationSuccess(
@@ -115,8 +114,10 @@ class WeatherFragment : Fragment() {
         }
         if (inte > 60){
             binding.bottomNavigationView.selectedItemId = R.id.bottom_view_weather
-        }
 
+        }
+        val badge =  binding.bottomNavigationView.getBadge(R.id.bottom_view_mars)
+        badge?.number = inte
     }
 
 
